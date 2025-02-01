@@ -84,13 +84,14 @@ Generate a profile image card for a user or bot, including badges and custom opt
 
 ```javascript
 const { AttachmentBuilder } = require('discord.js');
-const { profileImage } = require('discord-arts');
+const { Profile } = require('discord-arts');
 
 await interaction.deferReply();
 const user = interaction.options.getUser('user-option');
 
-const buffer = await profileImage(user.id, {
+const buffer = await Profile(user.id, {
   customTag: 'Admin',
+  font: 'ROBOTO',
   squareAvatar: true,
   // ... other imgOptions
 });
